@@ -3,7 +3,7 @@ import React from "react";
 export default function Rodape() {
     return (
         <>
-            <h2>Rodape</h2>
+            <h6>Criado por João Lucas</h6>
         </>
     );
 }

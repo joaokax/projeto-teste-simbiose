@@ -1,17 +1,17 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./views/Home";
+import Index from "./views/index";
 import Cadastro from "./views/Cadastro";
-import Menu from "./components/Menu";
-import Rodape from "./components/Rodape";
+import Menu from "./components/menu/Menu";
+import Rodape from "./components/rodape/Rodape";
 
 function App() {
   return (
     <BrowserRouter>
       <Menu />
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Index/>} />
         <Route path="/Cadastro" element={<Cadastro/>} />
       </Routes>
       <Rodape />
