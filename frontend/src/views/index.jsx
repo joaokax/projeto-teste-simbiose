@@ -7,7 +7,7 @@ export default function Index() {
 
     useEffect(() => {
         api.get('api').then(({data}) => {
-            setResults(data)
+            setResults(data.results)
         })
         console.log(results)
 
@@ -18,6 +18,14 @@ export default function Index() {
     return (
         <>
             <h2>Index</h2>
+            {results?.map((result) => (
+                <div key={result.email ? result.email : Math.random()}>
+                    <h4>{result.email}</h4>
+                </div>
+                
+            ))}
+
+
             <div class="table-responsivo">
                 <table>
                     <thead>
