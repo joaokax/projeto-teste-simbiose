@@ -5,7 +5,7 @@ export default function Menu() {
     return (
         <nav>
             <Link to="/">home</Link><br/>
-            <Link to="/Cadastro">Cadastro</Link><br/>
+            <Link to="/Item">Item</Link><br/>
         </nav>
     );
 }

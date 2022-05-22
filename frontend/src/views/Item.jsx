@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Cadastro() {
+export default function Item() {
     return (
         <>
-            <h2>Cadastro</h2>
+            <h2>Item</h2>
             <div class="form-container">
                 <form>
 
