@@ -18,9 +18,13 @@ export default function Index() {
     return (
         <>
             <h2>Index</h2>
-            {results?.map((result) => (
+            {results.map((result) => (
                 <div key={result.email ? result.email : Math.random()}>
-                    <h4>{result.email}</h4>
+                    <h4>
+                        {`Esse é seu email: ${result.email}
+                    e seu nome: ${result.name.first}
+                    `}
+                    </h4>
                 </div>
                 
             ))}
@@ -38,16 +42,18 @@ export default function Index() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Img</td>
-                            <td>Griffin Greald</td>
-                            <td>teste@email.com</td>
-                            <td>SkateX</td>
+                    {results.map((result) => (
+                        <tr key={result.email ? result.email : Math.random()}>
+                            <td><img src={result.picture.medium} alt="foto perfil" /></td>
+                            <td>{result.name.first}</td>
+                            <td>{result.email}</td>
+                            <td>0000</td>
                             <td>
                                 <button type="submit" value="Editar">Editar</button>
                                 <button type="submit" value="Deletar">Deletar</button>
                             </td>
                         </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
