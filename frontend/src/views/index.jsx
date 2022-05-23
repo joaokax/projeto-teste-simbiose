@@ -1,67 +1,47 @@
-import React, {useEffect, useState} from "react";
-import api from "../services/api";
+import React from "react";
 
 export default function Index() {
 
-    const [results, setResults] = useState([])
-
-    useEffect(() => {
-        api.get('api').then(({data}) => {
-            setResults(data.results)
-        })
-        console.log(results)
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
-
     return (
         <>
-
-        <div className="container-table">
-
-            <h2>Index</h2>
-            {results.map((result) => (
-                <div key={result.email ? result.email : Math.random()}>
-                    <h4>
-                        {`Esse é seu email: ${result.email}
-                    e seu nome: ${result.name.first}
-                    `}
-                    </h4>
-                </div>
-                
-            ))}
-
-
-            <div class="table-responsive">
-                <table>
+            <header>
+                <h1 className="header-title">Cadastrar Itens</h1>
+            </header>
+            <main>
+                <button type="button" className="button" id="cadastrarProduto">Cadastrar Produto</button>
+                <table id="tableClient" className="records">
                     <thead>
                         <tr>
-                            <th>Perfil</th>
-                            <th>Nome</th>
-                            <th>Email</th>
-                            <th>Item</th>
-                            <th>Action</th>
+                            <th>Produto</th>
+                            <th>Cliente</th>
+                            <th>E-mail</th>
+                            <th>Ação</th>
                         </tr>
                     </thead>
                     <tbody>
-                    {results.map((result) => (
-                        <tr key={result.email ? result.email : Math.random()}>
-                            <td><img src={result.picture.medium} alt="foto perfil" /></td>
-                            <td>{`${result.name.first} ${result.name.last}`}</td>
-                            <td>{result.email}</td>
-                            <td>0000</td>
-                            <td>
-                                <button type="submit" value="Editar">Editar</button>
-                                <button type="submit" value="Deletar">Deletar</button>
-                            </td>
-                        </tr>
-                        ))}
+
                     </tbody>
                 </table>
-            </div>
+                <div className="modal" id="modal">
+                    <div className="modal-content">
+                        <header className="modal-header">
+                            <h2>Escolha seu produto</h2>
+                            <span className="modal-close" id="modalClose">&#10006;</span>
+                        </header>
+                        <form id="form" className="modal-form">
+                            <input type="text" id="produto" data-index="new" className="modal-field" placeholder="Produto"
+                                required />
+                        </form>
+                        <footer className="modal-footer">
+                            <button id="salvar" className="button green">Salvar</button>
+                            <button id="cancelar" className="button blue">Cancelar</button>
+                        </footer>
+                    </div>
+                </div>
+                <button type="button" className="button red mobile" id="delete-all">Excluir Lista</button>
+            </main>
+        <div id="output"></div>
 
-            </div>
         </>
     );
 }
