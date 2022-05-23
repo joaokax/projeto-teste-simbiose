@@ -82,10 +82,12 @@ const createRow = (client, index) => {
 
         let name = data.results[0].name.first;
         let email = data.results[0].email;
+        let picture = data.results[0].picture.medium;
 
         const newRow = document.createElement('tr')
     newRow.innerHTML = `
         <td>${client.produto}</td>
+        <td><img src=${picture}></td>
         <td>${name}</td>
         <td>${email}</td>
         <td>
@@ -134,7 +136,7 @@ const editDelete = (event) => {
         } else {
             const client = readClient()[index]
             // eslint-disable-next-line no-restricted-globals
-            const response = confirm(`Deseja realmente excluir o produto? ${client.produto}`)
+            const response = confirm(`Deseja realmente excluir o item? ${client.produto}`)
             if (response) {
                 deleteClient(index)
                 updateTable()
