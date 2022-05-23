@@ -17,6 +17,9 @@ export default function Index() {
 
     return (
         <>
+
+        <div className="container-table">
+
             <h2>Index</h2>
             {results.map((result) => (
                 <div key={result.email ? result.email : Math.random()}>
@@ -30,7 +33,7 @@ export default function Index() {
             ))}
 
 
-            <div class="table-responsivo">
+            <div class="table-responsive">
                 <table>
                     <thead>
                         <tr>
@@ -45,7 +48,7 @@ export default function Index() {
                     {results.map((result) => (
                         <tr key={result.email ? result.email : Math.random()}>
                             <td><img src={result.picture.medium} alt="foto perfil" /></td>
-                            <td>{result.name.first}</td>
+                            <td>{`${result.name.first} ${result.name.last}`}</td>
                             <td>{result.email}</td>
                             <td>0000</td>
                             <td>
@@ -56,6 +59,8 @@ export default function Index() {
                         ))}
                     </tbody>
                 </table>
+            </div>
+
             </div>
         </>
     );
