@@ -8,6 +8,7 @@ import Index from "./views/index";
 function App() {
   return (
     <>
+    <div className="fundo"></div>
     <BrowserRouter>
       <Index />
       <GlobalStyles />

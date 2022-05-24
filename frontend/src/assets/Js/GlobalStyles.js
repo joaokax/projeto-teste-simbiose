@@ -11,8 +11,6 @@ export default createGlobalStyle`
     }
     body {
         background-color: #f1f1f1;
-        background-image: url('wallpaper.jpg');
-        background-repeat: repeat;
     }
     img {
         border-radius: 12px;
@@ -20,11 +18,22 @@ export default createGlobalStyle`
         box-shadow: -10px 10px 0px #2BF38B;
     }
 
+    .fundo {
+      z-index: -1;
+      width: 100%;
+      height: 350px;
+      position: absolute;
+      top:0;
+      background: rgb(229,255,246);
+      background: linear-gradient(207deg, rgba(229,255,246,1) 0%, rgba(153,255,220,1) 100%);
+      transform: translateY(-20px);
+    }
+
     // TABELA
     .container-list {
       background-color: #E5FFF6;
       border-radius: 12px;
-      margin:20px auto;
+      margin: 20px auto;
       left: 0;
       right: 0;
       max-width: 700px;

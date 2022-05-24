@@ -13,7 +13,7 @@ export default function Index() {
                             <th>Perfil</th>
                             <th>Cliente</th>
                             <th>E-mail</th>
-                            <th>Ação</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
